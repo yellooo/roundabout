@@ -200,6 +200,15 @@
 					if (settings.caption){
 						var titleCaption = $(this).find("a").attr('title');
 						$('.caption').html(titleCaption);
+						self
+							.children(settings.childSelector)
+							.each(function(i) {
+								$(this)
+									.bind("click.roundabout", function() {
+										var titleCaption = $(this).find("a").attr('title');
+										$('.caption').html(titleCaption);
+									});
+							});
 					}
 					
 					// bind next buttons
