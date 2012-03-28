@@ -68,6 +68,7 @@
 		minScale: 0.4,
 		maxScale: 1.0,
 		duration: 600,
+		caption: false,
 		btnNext: null,
 		btnNextCallback: function() {},
 		btnPrev: null,
@@ -194,7 +195,13 @@
 									});
 							});
 					}
-
+					
+					// enable caption
+					if (settings.caption){
+						var titleCaption = $(this).find("a").attr('title');
+						$('.caption').html(titleCaption);
+					}
+					
 					// bind next buttons
 					if (settings.btnNext) {
 						$(settings.btnNext)
